@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LaunchScript : MonoBehaviour
 {
-    public Rigidbody2D body;
-    public Camera cam;
+    private Rigidbody2D body;
+    private Camera cam;
     private Vector2 mousePos;
 
     public float force = 20f;
