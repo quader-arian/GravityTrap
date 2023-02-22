@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class AimScript : MonoBehaviour
 {
-    private Camera mainCam;
+    private Camera cam;
     private Vector3 mousePos;
     
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 rot = mousePos - transform.position;
+        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 lookDir = mousePos - transform.position;
 
-        float rotZ = Mathf.Atan2(rot.y, rot.x) * Mathf.Rad2Deg;
+        float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
     }
 }
