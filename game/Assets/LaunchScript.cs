@@ -33,6 +33,5 @@ public class LaunchScript : MonoBehaviour
         //float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Euler(0, 0, rotZ);
         body.AddForce(lookDir * force, ForceMode2D.Impulse);
-
     }
 }
