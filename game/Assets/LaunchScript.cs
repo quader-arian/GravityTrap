@@ -28,10 +28,10 @@ public class LaunchScript : MonoBehaviour
     void Lauch(){
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector2 pos = transform.position;
-        Vector2 lookDir = mousePos - pos;
+        Vector2 lookDir = (mousePos - pos);
 
         //float rotZ = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
         //transform.rotation = Quaternion.Euler(0, 0, rotZ);
-        body.AddForce(lookDir * force, ForceMode2D.Impulse);
+        body.AddForce(lookDir.normalized * force, ForceMode2D.Impulse);
     }
 }
