@@ -72,7 +72,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Positions:
   - {x: 1, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -83,8 +83,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.022026062
-        value: 0.1276632
+        time: 0
+        value: 0.26596123
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -96,9 +96,9 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.01568625, g: 0.20862137, b: 0.99215686, a: 1}
-      key1: {r: 0.78348166, g: 0.098039225, b: 0.99607843, a: 1}
-      key2: {r: 0.12941177, g: 0.19215688, b: 0.9921569, a: 1}
+      key0: {r: 0.01568625, g: 0.99215686, b: 0.85310835, a: 1}
+      key1: {r: 0, g: 1, b: 0.15156436, a: 1}
+      key2: {r: 0.12941173, g: 0.99215686, b: 0.95421773, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
