@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 111584855ec689745b3bc40ad6e955f0
+guid: 5bdf9359931ce2a45a329d2aec999518
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 300
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -67,10 +67,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: captainsprites_0
+      name: captain_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5b715471af7d244caa0ec8d1a527740
-      internalID: 1963732490
+      spriteID: 50c14e4acef982b40b6a373893a917ae
+      internalID: 2084138140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: captainsprites_1
+      name: captain_1
       rect:
         serializedVersion: 2
         x: 88
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2441347388e21584487f118275d0c340
-      internalID: 2077306881
+      spriteID: 1700914606b15ae45bdb3ec219f4d7a0
+      internalID: -93355635
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      captainsprites_1: 2077306881
-      captainsprites_0: 1963732490
+      captain_0: 2084138140
+      captain_1: -93355635
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
