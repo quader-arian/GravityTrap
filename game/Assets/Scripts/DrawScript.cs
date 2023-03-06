@@ -30,8 +30,9 @@ public class DrawScript : MonoBehaviour
         }
         else{
             if(checkIntersect(currentLineRenderer)){
+                Debug.Log("Intersect");
                 currentLineRenderer = null;
-                //CreateBrush();
+                CreateBrush();
             }
         }
     }
@@ -58,6 +59,13 @@ public class DrawScript : MonoBehaviour
     }
 
     bool checkIntersect(LineRenderer line){
+        for (int i = 1; i < line.positionCount; i++) {
+            for (int j = i + 1 ; j < line.positionCount; j++) {
+                if (line.GetPosition(i).x == line.GetPosition(j).x && line.GetPosition(i).y == line.GetPosition(j).y) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 }
