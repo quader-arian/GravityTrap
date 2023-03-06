@@ -8,6 +8,7 @@ TagManager:
   - Down
   - Left
   - Right
+  - Sensor
   layers:
   - Default
   - TransparentFX
