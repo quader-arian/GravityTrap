@@ -338,6 +338,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2907545312225244609, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2907545312225244668, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -794,6 +798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Start
       objectReference: {fileID: 0}
+    - target: {fileID: 3553561275940149090, guid: 7cc95c6c2b865704ea9f1c0dcc2df214, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 3553561275940149100, guid: 7cc95c6c2b865704ea9f1c0dcc2df214, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -847,6 +855,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6197938296574390733, guid: 6f66159c2fcc9d041b8492f8ba04defe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 6197938296574390734, guid: 6f66159c2fcc9d041b8492f8ba04defe, type: 3}
       propertyPath: m_Name
       value: Startlight
@@ -952,5 +964,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Captain
       objectReference: {fileID: 0}
+    - target: {fileID: 7184003498877804573, guid: 54b41216c133c8f4b9f8b26c7aa29083, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54b41216c133c8f4b9f8b26c7aa29083, type: 3}

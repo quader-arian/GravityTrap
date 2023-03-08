@@ -61,7 +61,9 @@ public class DrawScript : MonoBehaviour
     bool checkIntersect(LineRenderer line){
         for (int i = 1; i < line.positionCount; i++) {
             for (int j = i + 1 ; j < line.positionCount; j++) {
-                if (line.GetPosition(i).x == line.GetPosition(j).x && line.GetPosition(i).y == line.GetPosition(j).y) {
+                if ((Mathf.Round(line.GetPosition(i).x * 1000f) / 1000f == Mathf.Round(line.GetPosition(j).x * 1000f) / 1000f) && (Mathf.Round(line.GetPosition(i).y * 1000f) / 1000f == Mathf.Round(line.GetPosition(j).y * 1000f) / 1000f)) {
+                    Debug.Log(Mathf.Round(line.GetPosition(i).x * 1000f)/ 1000f);
+                    Debug.Log(Mathf.Round(line.GetPosition(j).x * 1000f)/ 1000f);
                     return true;
                 }
             }
