@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 910ad866cb0c8664e8e452215b71f4cb
+guid: 50b52f2845e116a41baedb5ec3c93b97
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -101,29 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: startlight_0
+      name: room1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1588
-        width: 1200
-        height: 794
+        y: 1350
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e688ec35d5ea6418e81cb50a1af83a
-      internalID: -2056013184
+      spriteID: 6b3016673ba9f9e4e8f8a0b9d7a6212f
+      internalID: 53563398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_1
+      name: room1_1
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 1588
-        width: 1200
-        height: 794
+        x: 1020
+        y: 1350
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 403c664af1eaa4c489ce7b303fdde8a7
-      internalID: 740592568
+      spriteID: c4c96eeb8fab66548be93bc74b5db027
+      internalID: -703489336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_2
+      name: room1_2
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 1588
-        width: 1200
-        height: 794
+        x: 2040
+        y: 1350
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 180b65a6fe4eea34890204b4bdff2c7e
-      internalID: -1216774239
+      spriteID: 7ebde8e14d60dd54b9a2f9c8d6c6c5e5
+      internalID: -1496186443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_3
+      name: room1_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 794
-        width: 1200
-        height: 794
+        y: 675
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b690d098c6feb11418b707a165b57e3f
-      internalID: 1005471544
+      spriteID: 11349c224a514584eaf44832ed7474b9
+      internalID: -1642935471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_4
+      name: room1_4
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 794
-        width: 1200
-        height: 794
+        x: 1020
+        y: 675
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d49aeafcb7c4ba4294af7818e7e481d
-      internalID: 273677915
+      spriteID: 1bd590e6f284d2244a2d345c8b369dc5
+      internalID: -656465010
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_5
+      name: room1_5
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 794
-        width: 1200
-        height: 794
+        x: 2040
+        y: 675
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 010de2b81de3a4a4c9c2e0438bf491e8
-      internalID: 202964709
+      spriteID: 1dc9d9253a2d76a4b86c6a4fe6d428a1
+      internalID: 1782857383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_6
+      name: room1_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1200
-        height: 794
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a7326a8b2415c7e48a99c858d7ab4082
-      internalID: 1554242117
+      spriteID: 2f3529d6fbf9472418c5aef8848fafa9
+      internalID: -254346760
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_7
+      name: room1_7
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 1020
         y: 0
-        width: 1200
-        height: 794
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e2d4b6cbcf749e4ab98f39839996894
-      internalID: 373675718
+      spriteID: 05c2f1cfd7099b941960b269b5129f0b
+      internalID: 1526110179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: startlight_8
+      name: room1_8
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 2040
         y: 0
-        width: 1200
-        height: 794
+        width: 1020
+        height: 675
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,8 +287,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7e93c45da646bc46a320196c66804d0
-      internalID: -1012371783
+      spriteID: c8f73931a94c5584a8e88e9430827f32
+      internalID: -808032649
       vertices: []
       indices: 
       edges: []
@@ -316,15 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      startlight_5: 202964709
-      startlight_6: 1554242117
-      startlight_2: -1216774239
-      startlight_1: 740592568
-      startlight_8: -1012371783
-      startlight_3: 1005471544
-      startlight_0: -2056013184
-      startlight_7: 373675718
-      startlight_4: 273677915
+      room1_2: -1496186443
+      room1_0: 53563398
+      room1_4: -656465010
+      room1_6: -254346760
+      room1_1: -703489336
+      room1_7: 1526110179
+      room1_8: -808032649
+      room1_3: -1642935471
+      room1_5: 1782857383
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
