@@ -17,8 +17,12 @@ public class DrawScript : MonoBehaviour
     public Gradient gradient;
 
     private Vector2 lastPos;
+    public bool onGround = false;
     public int tolerance;
     private int currTol;
+
+    private PolygonCollider2D collideArea;
+    private bool foundFirst;
     //private Collider2D lastCol;
     //private Collider2D curCol;
 
@@ -32,7 +36,7 @@ public class DrawScript : MonoBehaviour
     void Update(){
         if(!waitForLine){
             Vector2 mousePos = this.transform.position;
-            float round = 1000f;
+            float round = 100f;
             float mpRoundX = Mathf.Round(mousePos.x * round) / round;
             float mpRoundY = Mathf.Round(mousePos.y * round) / round;
             float lpRoundX = Mathf.Round(lastPos.x * round) / round;
@@ -46,7 +50,7 @@ public class DrawScript : MonoBehaviour
                 lastPos = mousePos;
             }
         }
-        else if(body.velocity == Vector2.zero){
+        else if(GetComponentInParent<GravityScript>().onGround){
             waitForLine = false;
             CreateBrush();
         }
@@ -76,33 +80,68 @@ public class DrawScript : MonoBehaviour
     }
 
     void AddAPoint(Vector2 pointPos){
-        
-            currentLineRenderer.positionCount++;
-            int positionIndex = currentLineRenderer.positionCount -1;
-            currentLineRenderer.SetPosition(positionIndex, pointPos);
-            GameObject sensorInstance = Instantiate(sensor, pointPos, Quaternion.identity);
-            sensorInstance.transform.parent = currentLineRenderer.transform;
+        currentLineRenderer.positionCount++;
+        int positionIndex = currentLineRenderer.positionCount -1;
+        currentLineRenderer.SetPosition(positionIndex, pointPos);
+        GameObject sensorInstance = Instantiate(sensor, pointPos, Quaternion.identity);
+        sensorInstance.transform.parent = currentLineRenderer.transform;
     }
 
     void OnTriggerStay2D(Collider2D col){
         if (col.gameObject.tag == "Sensor"){
             col.gameObject.GetComponent<SensorScript>().prevSensor = false;
+            col.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0.5f);
         }
     }
     void OnTriggerExit2D(Collider2D col){
         if (col.gameObject.tag == "Sensor"){
             col.gameObject.GetComponent<SensorScript>().prevSensor = true;
+            col.gameObject.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
         }
     }
 
     //when it enters for first time
     void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.tag == "Sensor"){
+        if (col.gameObject.tag == "Sensor" && col.gameObject.GetComponent<SensorScript>().prevSensor && !GetComponentInParent<GravityScript>().onGround && currentLineRenderer != null){
             Vector2 intersectPoint = col.transform.position;
+            col.gameObject.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
             AddAPoint(intersectPoint);
-            if(col.gameObject.GetComponent<SensorScript>().prevSensor){
-                intersect = true;
+            intersect = true;
+
+            collideArea = currentLineObject.AddComponent<PolygonCollider2D>();
+            collideArea.isTrigger = true;
+
+            Vector3[] pos = new Vector3[currentLineRenderer.positionCount];
+            int count = 0;
+            foundFirst = false;
+            currentLineRenderer.GetPositions(pos);
+            foreach(Vector3 temp in pos){
+                Vector2 p = temp;
+                if(p == intersectPoint && !foundFirst){
+                    foundFirst = true;
+                    count++;
+                }else if(foundFirst){
+                    count++;
+                }
             }
+            int maxCount = count - 1;
+            Debug.Log("max points: " + maxCount);
+            Vector2[] newPos = new Vector2[maxCount];
+            count = 0;
+            foundFirst = false;
+            foreach(Vector3 temp in pos){
+                Vector2 p = temp;
+                if(p == intersectPoint && !foundFirst && count < maxCount){
+                    foundFirst = true;
+                    newPos[count] = p;
+                    count++;
+                }else if(foundFirst && count < maxCount){
+                    newPos[count] = p;
+                    count++;
+                }
+            }
+            Debug.Log("used points: " + count);
+            collideArea.SetPath(0, newPos);
         }
     }
 }

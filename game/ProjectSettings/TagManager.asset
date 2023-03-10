@@ -9,6 +9,7 @@ TagManager:
   - Left
   - Right
   - Sensor
+  - AttackArea
   layers:
   - Default
   - TransparentFX
