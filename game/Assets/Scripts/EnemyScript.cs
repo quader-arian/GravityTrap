@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -22,8 +23,9 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
-            }else if(onAreaContactExplode){
-                //
+            }
+            if(onAreaContactExplode){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
@@ -32,8 +34,9 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
-            }else if(onAreaContactExplode){
-                //
+            }
+            if(onAreaContactExplode){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
@@ -44,8 +47,9 @@ public class EnemyScript : MonoBehaviour
             if(onContactKill){
                 Destroy(gameObject, 0.05f);
                 StartCoroutine(shake.Shake(.1f, .1f));
-            }else if(onContactExplode){
-                //
+            }
+            if(onContactExplode){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
@@ -55,8 +59,9 @@ public class EnemyScript : MonoBehaviour
             if(onContactKill){
                 Destroy(gameObject, 0.05f);
                 StartCoroutine(shake.Shake(.1f, .1f));
-            }else if(onContactExplode){
-                //
+            }
+            if(onContactExplode){
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }
