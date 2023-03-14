@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 2907545312225244614}
   - component: {fileID: 2907545312225244613}
   - component: {fileID: -4183359910402974774}
+  - component: {fileID: -1282490482314503952}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -292,8 +293,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84290978b483c4345b8ece26643ce367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shake: {fileID: 0}
   signal: {fileID: 0}
   onGround: 0
+  onGroundExit: 0
 --- !u!255 &-4183359910402974774
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -312,6 +315,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_DampingRatio: 1
   m_Frequency: 0
+--- !u!114 &-1282490482314503952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2907545312225244668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb354936154b7d45a3ccd4efce4270b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {fileID: 0}
+  speed: 10
 --- !u!1 &6428147308981125333
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,3 +509,12 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   onGround: 0
   tolerance: 8
+  aud:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currSound: 0.4
+  shake: {fileID: 0}

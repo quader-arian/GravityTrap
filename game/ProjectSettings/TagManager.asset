@@ -10,6 +10,7 @@ TagManager:
   - Right
   - Sensor
   - AttackArea
+  - EnemyComplete
   layers:
   - Default
   - TransparentFX
