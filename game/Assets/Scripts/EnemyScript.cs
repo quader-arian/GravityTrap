@@ -22,7 +22,6 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
-                StartCoroutine(shake.Shake(.1f, .1f));
             }else if(onAreaContactExplode){
                 //
             }
@@ -33,7 +32,6 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
-                StartCoroutine(shake.Shake(.1f, .1f));
             }else if(onAreaContactExplode){
                 //
             }

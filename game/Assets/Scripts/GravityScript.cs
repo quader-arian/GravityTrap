@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class GravityScript : MonoBehaviour
 {
+    public CameraShake shake;
     public GameObject signal;
     public bool onGround = false;
+    public bool onGroundExit = false;
 
     void OnCollisionEnter2D(Collision2D col)
     {
         GravityChange(col);
+        StartCoroutine(shake.Shake(.04f, .04f));
+        onGroundExit = false;
     }
     void OnCollisionStay2D(Collision2D col)
     {
         GravityChange(col);
+        onGroundExit = false;
     }
     void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.tag == "Up" || col.gameObject.tag == "Left" || col.gameObject.tag == "Right" || col.gameObject.tag == "Down"){
             onGround = false;
+            onGroundExit = true;
         }
+        StartCoroutine(shake.Shake(.04f, .04f));
     }
 
     void GravityChange(Collision2D col){

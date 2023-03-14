@@ -5,7 +5,8 @@ using UnityEngine;
 public class DrawScript : MonoBehaviour
 {
     private Camera cam;
-    private bool waitForLine = false;
+    private bool waitForLine1 = false;
+    private bool waitForLine2 = false;
     private bool intersect = false;
     public GameObject brush;
     public GameObject sensor;
@@ -23,18 +24,55 @@ public class DrawScript : MonoBehaviour
 
     private PolygonCollider2D collideArea;
     private bool foundFirst;
-    //private Collider2D lastCol;
-    //private Collider2D curCol;
+    
+    public AudioSource[] aud = new AudioSource[6];
+    private int audioPick = 0;
+    public float currSound = 0.4f;
+
+    public CameraShake shake;
 
     void Start(){
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         body = GetComponent<Rigidbody2D>();
         CreateBrush();
         currTol = tolerance;
+        for(int i = 0; i < aud.Length; i++){
+            aud[i].volume = 0.0f;
+        }
+        aud[5].volume = currSound;
+        currSound += 0.1f;
     }
 
     void Update(){
-        if(!waitForLine){
+        if(!waitForLine1 && !waitForLine2){
+            if(Input.GetButtonDown("Fire1") && currSound < 1.0){
+                if(audioPick == 0){
+                    aud[0].volume = 0.0f;
+                    aud[1].volume = 0.0f;
+                    aud[2].volume = 0.0f;
+                    aud[3].volume = currSound;
+                    aud[4].volume = 0.0f;
+                    aud[5].volume = currSound;
+                }else if(audioPick == 1){
+                    aud[3].volume = currSound;
+                    aud[4].volume = currSound;
+                    aud[5].volume = currSound;
+                }else if(audioPick == 2){
+                    aud[1].volume = currSound;
+                    aud[3].volume = currSound;
+                    aud[4].volume = currSound;
+                    aud[5].volume = currSound;
+                }else{
+                    aud[0].volume = currSound-0.5f;;
+                    aud[1].volume = currSound;
+                    aud[2].volume = currSound;
+                    aud[3].volume = currSound;
+                    aud[4].volume = currSound;
+                    aud[5].volume = currSound;
+                }
+                audioPick++;
+                currSound += 0.1f;
+            }
             Vector2 mousePos = this.transform.position;
             float round = 100f;
             float mpRoundX = Mathf.Round(mousePos.x * round) / round;
@@ -49,9 +87,10 @@ public class DrawScript : MonoBehaviour
                 }
                 lastPos = mousePos;
             }
-        }
-        else if(GetComponentInParent<GravityScript>().onGround){
-            waitForLine = false;
+        }else if(GetComponentInParent<GravityScript>().onGround){
+            waitForLine1 = false;
+        }else if(GetComponentInParent<GravityScript>().onGroundExit && !waitForLine1){
+            waitForLine2 = false;
             CreateBrush();
         }
 
@@ -60,8 +99,38 @@ public class DrawScript : MonoBehaviour
             Destroy(currentLineObject, 0.5f);
             currentLineRenderer.colorGradient = gradient;
             currentLineRenderer = null;
-            waitForLine = true;
+            waitForLine1 = true;
+            waitForLine2 = true;
             intersect = false;
+            StartCoroutine(shake.Shake(.1f, .1f));
+            if(currSound < 1.0){
+                currSound += 0.1f;
+                if(audioPick == 0){
+                    aud[0].volume = 0.0f;
+                    aud[1].volume = 0.0f;
+                    aud[2].volume = 0.0f;
+                    aud[3].volume = currSound;
+                    aud[4].volume = 0.0f;
+                    aud[5].volume = currSound;
+                }else if(audioPick == 1){
+                    aud[3].volume = currSound;
+                    aud[4].volume = currSound;
+                    aud[5].volume = currSound;
+                }else if(audioPick == 2){
+                    aud[1].volume = currSound;
+                    aud[3].volume = currSound;
+                    aud[4].volume = currSound;
+                    aud[5].volume = currSound;
+                }else{
+                    aud[0].volume = currSound-0.5f;
+                    aud[1].volume = currSound;
+                    aud[2].volume = currSound;
+                    aud[3].volume = currSound;
+                    aud[4].volume = currSound;
+                    aud[5].volume = currSound;
+                }
+                audioPick++;
+            }
         }
     }
 
