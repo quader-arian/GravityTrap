@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public CameraShake shake;
+    
     public bool damage;
     public int damageAmount;
 
@@ -20,6 +22,7 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
+                StartCoroutine(shake.Shake(.1f, .1f));
             }else if(onAreaContactExplode){
                 //
             }
@@ -30,6 +33,7 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
+                StartCoroutine(shake.Shake(.1f, .1f));
             }else if(onAreaContactExplode){
                 //
             }
@@ -40,7 +44,8 @@ public class EnemyScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
-                Destroy(gameObject);
+                Destroy(gameObject, 0.05f);
+                StartCoroutine(shake.Shake(.1f, .1f));
             }else if(onContactExplode){
                 //
             }
@@ -50,7 +55,8 @@ public class EnemyScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
-                Destroy(gameObject);
+                Destroy(gameObject, 0.05f);
+                StartCoroutine(shake.Shake(.1f, .1f));
             }else if(onContactExplode){
                 //
             }
