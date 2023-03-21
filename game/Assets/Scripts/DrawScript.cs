@@ -16,6 +16,7 @@ public class DrawScript : MonoBehaviour
     private LineRenderer currentLineRenderer;
     private GameObject currentLineObject;
     public Gradient gradient;
+    public bool inNoDrawArea = false;
 
     private Vector2 lastPos;
     public bool onGround = false;
@@ -37,7 +38,7 @@ public class DrawScript : MonoBehaviour
     void Update(){
         if(!waitForLine1 && !waitForLine2){
             Vector2 mousePos = this.transform.position;
-            float round = 100f;
+            float round = 1000f;
             float mpRoundX = Mathf.Round(mousePos.x * round) / round;
             float mpRoundY = Mathf.Round(mousePos.y * round) / round;
             float lpRoundX = Mathf.Round(lastPos.x * round) / round;
@@ -95,16 +96,25 @@ public class DrawScript : MonoBehaviour
         if (col.gameObject.tag == "Sensor"){
             col.gameObject.GetComponent<SensorScript>().prevSensor = false;
         }
+        if (col.gameObject.tag == "NoDrawArea"){
+            inNoDrawArea = true;
+        }
     }
     void OnTriggerExit2D(Collider2D col){
         if (col.gameObject.tag == "Sensor"){
             col.gameObject.GetComponent<SensorScript>().prevSensor = true;
         }
+        if (col.gameObject.tag == "NoDrawArea"){
+            inNoDrawArea = false;
+        }
     }
 
     //when it enters for first time
     void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.tag == "Sensor" && col.gameObject.GetComponent<SensorScript>().prevSensor && !GetComponentInParent<GravityScript>().onGround && currentLineRenderer != null){
+        if (col.gameObject.tag == "NoDrawArea"){
+            inNoDrawArea = true;
+        }
+        if (col.gameObject.tag == "Sensor" && col.gameObject.GetComponent<SensorScript>().prevSensor && !inNoDrawArea && currentLineRenderer != null){
             Vector2 intersectPoint = col.transform.position;
             AddAPoint(intersectPoint);
             intersect = true;
@@ -141,6 +151,10 @@ public class DrawScript : MonoBehaviour
                 }
             }
             collideArea.SetPath(0, newPos);
+            MeshFilter collideVisual = currentLineObject.AddComponent<MeshFilter>();
+            if(collideArea != null && collideVisual != null){
+                collideVisual.mesh = collideArea.CreateMesh(true, true);
+            }
         }
     }
 }

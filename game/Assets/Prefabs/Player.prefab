@@ -507,14 +507,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
+  inNoDrawArea: 0
   onGround: 0
-  tolerance: 8
-  aud:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  currSound: 0.4
+  tolerance: 2
   shake: {fileID: 0}

@@ -11,6 +11,7 @@ TagManager:
   - Sensor
   - AttackArea
   - EnemyComplete
+  - NoDrawArea
   layers:
   - Default
   - TransparentFX
