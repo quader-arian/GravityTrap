@@ -38,7 +38,7 @@ public class DrawScript : MonoBehaviour
     void Update(){
         if(!waitForLine1 && !waitForLine2){
             Vector2 mousePos = this.transform.position;
-            float round = 10f;
+            float round = 100f;
             float mpRoundX = Mathf.Round(mousePos.x * round) / round;
             float mpRoundY = Mathf.Round(mousePos.y * round) / round;
             float lpRoundX = Mathf.Round(lastPos.x * round) / round;
@@ -46,10 +46,10 @@ public class DrawScript : MonoBehaviour
             if(!(mpRoundX == lpRoundX && mpRoundY == lpRoundY)){
                 currTol--;
                 if(currTol<=0){
-                    AddAPoint(mousePos);
+                    AddAPoint(new Vector2(mpRoundX, mpRoundY));
                     currTol = tolerance;
                 }
-                lastPos = mousePos;
+                lastPos = new Vector2(mpRoundX, mpRoundY);
             }
         }else if(GetComponentInParent<GravityScript>().onGround){
             waitForLine1 = false;
