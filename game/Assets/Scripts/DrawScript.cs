@@ -19,11 +19,11 @@ public class DrawScript : MonoBehaviour
     public bool inNoDrawArea = false;
 
     private Vector2 lastPos;
-    public bool onGround = false;
     public int tolerance;
     private int currTol;
 
     private PolygonCollider2D collideArea;
+    private MeshFilter collideVisual;
     private bool foundFirst;
 
     public CameraShake shake;
@@ -38,12 +38,12 @@ public class DrawScript : MonoBehaviour
     void Update(){
         if(!waitForLine1 && !waitForLine2){
             Vector2 mousePos = this.transform.position;
-            float round = 1000f;
+            float round = 10f;
             float mpRoundX = Mathf.Round(mousePos.x * round) / round;
             float mpRoundY = Mathf.Round(mousePos.y * round) / round;
             float lpRoundX = Mathf.Round(lastPos.x * round) / round;
             float lpRoundY = Mathf.Round(lastPos.y * round) / round;
-            if(mpRoundX != lpRoundX && mpRoundY != lpRoundY){
+            if(!(mpRoundX == lpRoundX && mpRoundY == lpRoundY)){
                 currTol--;
                 if(currTol<=0){
                     AddAPoint(mousePos);
@@ -119,7 +119,9 @@ public class DrawScript : MonoBehaviour
             AddAPoint(intersectPoint);
             intersect = true;
 
-            collideArea = currentLineObject.AddComponent<PolygonCollider2D>();
+            if(currentLineObject.GetComponent<PolygonCollider2D>() == null){
+                collideArea = currentLineObject.AddComponent<PolygonCollider2D>();
+            }
             collideArea.isTrigger = true;
 
             Vector3[] pos = new Vector3[currentLineRenderer.positionCount];
@@ -151,9 +153,14 @@ public class DrawScript : MonoBehaviour
                 }
             }
             collideArea.SetPath(0, newPos);
-            MeshFilter collideVisual = currentLineObject.AddComponent<MeshFilter>();
-            if(collideArea != null && collideVisual != null){
+
+            if(currentLineObject.GetComponent<MeshFilter>() == null){
+                collideVisual = currentLineObject.AddComponent<MeshFilter>();
+            }
+            if(collideArea != null && collideVisual != null && collideArea.GetTotalPointCount() > 5){
                 collideVisual.mesh = collideArea.CreateMesh(true, true);
+            }else{
+                Destroy(collideVisual.mesh);
             }
         }
     }
