@@ -5,14 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
-    public CameraShake shake;
-    
-    public bool damage;
-    public int damageAmount;
+    private CameraShake shake;
 
+    [Header("Move Settings")]
     public bool move;
-    public int moveSpeed;
+    public float moveSpeed;
+    public Transform[] movePoints;
+    public int currentMovePoint = 0;
 
+    [Header("Shoot Settings")]
+    public bool shoot;
+    public float shootInterval;
+    public float shootSpeed;
+    private float timer;
+    public GameObject bullet;
+    public Transform firePoint;
+
+    [Header("Kill and Death Settings")]
     public bool onContactKill;
     public bool onContactExplode;
     public bool onAreaContactKill;
@@ -63,6 +72,35 @@ public class EnemyScript : MonoBehaviour
             if(onContactExplode){
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+        }
+    }
+
+    void Start(){
+        timer = shootInterval;
+        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+    }
+
+    void Update(){
+        if(move){
+            if(transform.position == movePoints[currentMovePoint].position){
+                currentMovePoint++;
+                if(currentMovePoint >= movePoints.Length){
+                    currentMovePoint = 0;
+                }
+            }
+            float step = moveSpeed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, movePoints[currentMovePoint].position, step);
+        }
+
+        if(shoot){
+            if(timer < 0){
+                GameObject currBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                Rigidbody2D rbody = currBullet.GetComponent<Rigidbody2D>();
+
+                rbody.AddForce(firePoint.right * shootSpeed, ForceMode2D.Impulse);
+                timer = shootInterval;
+            }
+            timer = timer - Time.deltaTime;
         }
     }
 }

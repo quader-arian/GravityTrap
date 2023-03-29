@@ -21,7 +21,7 @@ public class LaunchScript : MonoBehaviour
     void Update()
     {
        if(Input.GetButtonDown("Fire1")){
-        Lauch();
+            Lauch();
        }
     }
 

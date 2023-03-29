@@ -508,5 +508,5 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   inNoDrawArea: 0
-  tolerance: 7
+  tolerance: 8
   shake: {fileID: 0}
