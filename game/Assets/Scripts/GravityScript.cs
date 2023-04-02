@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class GravityScript : MonoBehaviour
 {
-    public CameraShake shake;
+    private CameraShake shake;
     public GameObject signal;
     public bool onGround = false;
     public bool onGroundExit = false;
+
+    void Start(){
+        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+    }
 
     void OnCollisionEnter2D(Collision2D col)
     {

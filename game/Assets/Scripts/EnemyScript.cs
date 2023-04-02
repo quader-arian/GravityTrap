@@ -8,7 +8,6 @@ public class EnemyScript : MonoBehaviour
     private CameraShake shake;
 
     [Header("Move Settings")]
-    public bool move;
     public float moveSpeed;
     public Transform[] movePoints;
     public int currentMovePoint = 0;
@@ -81,7 +80,7 @@ public class EnemyScript : MonoBehaviour
     }
 
     void Update(){
-        if(move){
+        if(moveSpeed>0){
             if(transform.position == movePoints[currentMovePoint].position){
                 currentMovePoint++;
                 if(currentMovePoint >= movePoints.Length){

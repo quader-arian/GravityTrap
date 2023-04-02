@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class DrawScript : MonoBehaviour
 {
-    private Camera cam;
     private bool waitForLine1 = false;
     private bool waitForLine2 = false;
     private bool intersect = false;
     public GameObject brush;
     public GameObject sensor;
-    public GameObject allLines;
-    private Rigidbody2D body;
     private Vector3[] allPoints;
     private LineRenderer currentLineRenderer;
     private GameObject currentLineObject;
     public Gradient gradient;
-    public bool inNoDrawArea = false;
+    private bool inNoDrawArea = false;
 
     private Vector2 lastPos;
     public int tolerance;
@@ -26,19 +23,18 @@ public class DrawScript : MonoBehaviour
     private MeshFilter collideVisual;
     private bool foundFirst;
 
-    public CameraShake shake;
+    private CameraShake shake;
 
     void Start(){
-        cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        body = GetComponent<Rigidbody2D>();
         CreateBrush();
         currTol = tolerance;
+        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
     }
 
     void Update(){
         if(!waitForLine1 && !waitForLine2){
             Vector2 mousePos = this.transform.position;
-            float round = 100f;
+            float round = 1000f;
             float mpRoundX = Mathf.Round(mousePos.x * round) / round;
             float mpRoundY = Mathf.Round(mousePos.y * round) / round;
             float lpRoundX = Mathf.Round(lastPos.x * round) / round;
@@ -74,7 +70,7 @@ public class DrawScript : MonoBehaviour
         GameObject brushInstance = Instantiate(brush);
         currentLineObject = brushInstance;
         currentLineRenderer = brushInstance.GetComponent<LineRenderer>();
-        currentLineRenderer.transform.parent = allLines.transform;
+        currentLineRenderer.transform.parent = GameObject.FindWithTag("Trail").transform;
 
         Vector2 mousePos = this.transform.position;
 

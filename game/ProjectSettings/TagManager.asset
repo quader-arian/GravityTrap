@@ -12,6 +12,7 @@ TagManager:
   - AttackArea
   - EnemyComplete
   - NoDrawArea
+  - Trail
   layers:
   - Default
   - TransparentFX
