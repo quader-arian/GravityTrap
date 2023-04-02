@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class EnemyScript : MonoBehaviour
 {
     private CameraShake shake;
+    [Header("FX")]
+    public GameObject blueFX;
+    public GameObject greenFX;
+    public GameObject redFX;
 
     [Header("Move Settings")]
     public float moveSpeed;
@@ -31,8 +35,10 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Destroy(gameObject, 0.5f);
+                Instantiate(redFX, transform.position, Quaternion.identity);
             }
             if(onAreaContactExplode){
+                Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -41,9 +47,11 @@ public class EnemyScript : MonoBehaviour
     {
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
+                Instantiate(redFX, transform.position, Quaternion.identity);
                 Destroy(gameObject, 0.5f);
             }
             if(onAreaContactExplode){
+                Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -53,10 +61,12 @@ public class EnemyScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
                 Destroy(gameObject, 0.05f);
                 StartCoroutine(shake.Shake(.1f, .1f));
             }
             if(onContactExplode){
+                Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -65,10 +75,12 @@ public class EnemyScript : MonoBehaviour
     {
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
                 Destroy(gameObject, 0.05f);
                 StartCoroutine(shake.Shake(.1f, .1f));
             }
             if(onContactExplode){
+                Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -93,6 +105,7 @@ public class EnemyScript : MonoBehaviour
 
         if(shoot){
             if(timer < 0){
+                Instantiate(greenFX, transform.position, Quaternion.identity);
                 GameObject currBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 Rigidbody2D rbody = currBullet.GetComponent<Rigidbody2D>();
 

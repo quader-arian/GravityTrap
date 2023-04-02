@@ -223,3 +223,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 2
+  redFX: {fileID: 8114572080856966004, guid: a73ea26a59415b541b282dce3bb7f183, type: 3}
