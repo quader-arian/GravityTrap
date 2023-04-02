@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 38627c0bbb485854bbdd459d3c7196f6
+guid: abf10068c0879694babeb22b1d3c12eb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: transition_0
+      name: spinner_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7b0c6dd1355af94bbe598a176ed1ebb
-      internalID: 99901085
+      spriteID: 65bd8bff6851a9f478719425dda8e1a7
+      internalID: -185075154
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_1
+      name: spinner_1
       rect:
         serializedVersion: 2
-        x: 114
+        x: 50
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfda94559cce9d742a862ef0a406f7dd
-      internalID: -524736768
+      spriteID: ecd5bbc4383829d4982735ea70230039
+      internalID: 940429343
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_2
+      name: spinner_2
       rect:
         serializedVersion: 2
-        x: 228
+        x: 100
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 26518709b5963064e90c2810b5dd0690
-      internalID: -1673904052
+      spriteID: b80ce6da10cee0b418f1f2e4687e1e15
+      internalID: -1812060083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_3
+      name: spinner_3
       rect:
         serializedVersion: 2
-        x: 342
+        x: 150
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a2b3e733bea2246bf9c4c504e31be0
-      internalID: 746110598
+      spriteID: b3e237d2e2288ba4885fa5482538610a
+      internalID: -1941500221
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_4
+      name: spinner_4
       rect:
         serializedVersion: 2
-        x: 456
+        x: 200
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2f2caaab2d29e64f8ef2a02e14f54b9
-      internalID: -1001751252
+      spriteID: 91ffea1e8ad9dcc43a82a74e647c5d09
+      internalID: 872497124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_5
+      name: spinner_5
       rect:
         serializedVersion: 2
-        x: 570
+        x: 250
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a271a881039b144c8f4a57f59baea32
-      internalID: -1895539390
+      spriteID: 9a58737226c276c4a90ab6d6ce40af72
+      internalID: 1526002097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_6
+      name: spinner_6
       rect:
         serializedVersion: 2
-        x: 684
+        x: 300
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dbfbaad5c06211e4db0bdbc7139f7e01
-      internalID: -428082419
+      spriteID: fdc0c5f206cf1d1498fe0a40a74b5f5d
+      internalID: 1523710972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_7
+      name: spinner_7
       rect:
         serializedVersion: 2
-        x: 798
+        x: 350
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da665db07aafeff409c8a31152b351ee
-      internalID: 1540477931
+      spriteID: 1298bfbb2cc80404b8363fa77fee9b8a
+      internalID: 1801023999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: transition_8
+      name: spinner_8
       rect:
         serializedVersion: 2
-        x: 912
+        x: 400
         y: 0
-        width: 114
-        height: 189
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,8 +287,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b2cbfecdf2399f4f9482379252ba118
-      internalID: 1570798294
+      spriteID: f0fe28c0d0f8c694daade6bed9fa9a0c
+      internalID: 1341606786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spinner_9
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bbcd2b6b0f672e44b138066157322fc
+      internalID: 168565776
       vertices: []
       indices: 
       edges: []
@@ -304,15 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      transition_6: -428082419
-      transition_7: 1540477931
-      transition_5: -1895539390
-      transition_3: 746110598
-      transition_2: -1673904052
-      transition_0: 99901085
-      transition_8: 1570798294
-      transition_1: -524736768
-      transition_4: -1001751252
+      spinner_9: 168565776
+      spinner_7: 1801023999
+      spinner_0: -185075154
+      spinner_5: 1526002097
+      spinner_6: 1523710972
+      spinner_4: 872497124
+      spinner_1: 940429343
+      spinner_2: -1812060083
+      spinner_3: -1941500221
+      spinner_8: 1341606786
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10934e0775a3c544dac8b63971038ff5
+guid: 94e435908e1d80e4eb512669371aba62
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: combatidle_0
+      name: rolling_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 114
-        height: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4ec00722bbf9e74bae897b60e96e239
-      internalID: 429828985
+      spriteID: bdf216985cc54ce4ab55caa55e227622
+      internalID: -9456403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: combatidle_1
+      name: rolling_1
       rect:
         serializedVersion: 2
-        x: 114
+        x: 50
         y: 0
-        width: 114
-        height: 150
+        width: 50
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87bd0e99a1f768e4d8eff4a41a966fef
-      internalID: -1219410806
+      spriteID: 896f5b1ca877a8b4d980ddd5908a7a3e
+      internalID: 1348102818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rolling_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73fc7495b65ba84abd3e41cab5f266a
+      internalID: 587994387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rolling_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2553be4fdcc7f3d49b16d6c78a2f8ea6
+      internalID: -82091470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rolling_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56667b9d8689bd048a8b6d5101464f74
+      internalID: -737618455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rolling_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 033086291f56e5249b79eeb7757d504f
+      internalID: 2004836723
       vertices: []
       indices: 
       edges: []
@@ -157,8 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      combatidle_1: -1219410806
-      combatidle_0: 429828985
+      rolling_3: -82091470
+      rolling_0: -9456403
+      rolling_4: -737618455
+      rolling_5: 2004836723
+      rolling_2: 587994387
+      rolling_1: 1348102818
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
