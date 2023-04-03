@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject player;
     public float offset;
     public float offsetSmoothing;
     private Vector3 playerPosition;
@@ -21,13 +21,14 @@ public class CameraFollow : MonoBehaviour
         playerPosition = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
         Vector2 g = Physics2D.gravity;
 
-        if(player.transform.localScale.x > 0f)
-        {
+        if(g.Equals(new Vector2(9.8f, 0f))){
+            playerPosition = new Vector3(playerPosition.x - offset , playerPosition.y, playerPosition.z);
+        }else if(g.Equals(new Vector2(-9.8f, 0f))){
             playerPosition = new Vector3(playerPosition.x + offset, playerPosition.y, playerPosition.z);
-        }
-        else
-        {
-            playerPosition = new Vector3(playerPosition.x - offset, playerPosition.y, playerPosition.z);
+        }else if(g.Equals(new Vector2(0f, 9.8f))){
+            playerPosition = new Vector3(playerPosition.x, playerPosition.y + offset, playerPosition.z);
+        }else if(g.Equals(new Vector2(0f, -9.8f))){
+            playerPosition = new Vector3(playerPosition.x, playerPosition.y - offset, playerPosition.z);
         }
 
         transform.position = Vector3.Lerp(transform.position, playerPosition, offsetSmoothing * Time.deltaTime);
