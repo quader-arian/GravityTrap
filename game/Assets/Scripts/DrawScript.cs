@@ -13,6 +13,7 @@ public class DrawScript : MonoBehaviour
     private LineRenderer currentLineRenderer;
     private GameObject currentLineObject;
     public Gradient gradient;
+    public Color col;
     private bool inNoDrawArea = false;
 
     private Vector2 lastPos;
@@ -61,6 +62,9 @@ public class DrawScript : MonoBehaviour
             currentLineRenderer = null;
             waitForLine1 = true;
             waitForLine2 = true;
+            foreach(GameObject child in gameObject.transform){
+                child.GetComponent<UnityEngine.Rendering.Universal.Light2D>().color = col;
+            }
             intersect = false;
             StartCoroutine(shake.Shake(.1f, .1f));
         }

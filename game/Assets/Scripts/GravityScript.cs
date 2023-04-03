@@ -9,6 +9,10 @@ public class GravityScript : MonoBehaviour
     public bool onGround = false;
     public bool onGroundExit = false;
 
+    public GameObject idle;
+    public GameObject run;
+    public GameObject air;
+
     void Start(){
         shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
     }
@@ -29,6 +33,9 @@ public class GravityScript : MonoBehaviour
         if (col.gameObject.tag == "Up" || col.gameObject.tag == "Left" || col.gameObject.tag == "Right" || col.gameObject.tag == "Down"){
             onGround = false;
             onGroundExit = true;
+            idle.SetActive(false);
+            run.SetActive(false);
+            air.SetActive(true);
         }
         StartCoroutine(shake.Shake(.04f, .04f));
     }
@@ -37,21 +44,61 @@ public class GravityScript : MonoBehaviour
         if (col.gameObject.tag == "Up"){
             Physics2D.gravity = new Vector2(0, 9.8f);
             signal.transform.rotation = Quaternion.Euler(0, 0, 0);
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+            if(GetComponent<Rigidbody2D>().velocity == Vector2.zero){
+                idle.SetActive(true);
+                run.SetActive(false);
+                air.SetActive(false);
+            }else{
+                idle.SetActive(false);
+                run.SetActive(true);
+                air.SetActive(false);
+            }
             onGround = true;
         }
         if(col.gameObject.tag == "Left"){
             Physics2D.gravity = new Vector2(-9.8f, 0);
             signal.transform.rotation = Quaternion.Euler(0, 0, 90);
+            transform.rotation = Quaternion.Euler(0, 0, 270);
+            if(GetComponent<Rigidbody2D>().velocity == Vector2.zero){
+                idle.SetActive(true);
+                run.SetActive(false);
+                air.SetActive(false);
+            }else{
+                idle.SetActive(false);
+                run.SetActive(true);
+                air.SetActive(false);
+            }
             onGround = true;
         }
         if(col.gameObject.tag == "Right"){
             Physics2D.gravity = new Vector2(9.8f, 0);
             signal.transform.rotation = Quaternion.Euler(0, 0, 270);
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+            if(GetComponent<Rigidbody2D>().velocity == Vector2.zero){
+                idle.SetActive(true);
+                run.SetActive(false);
+                air.SetActive(false);
+            }else{
+                idle.SetActive(false);
+                run.SetActive(true);
+                air.SetActive(false);
+            }
             onGround = true;
         }
         if(col.gameObject.tag == "Down"){
             Physics2D.gravity = new Vector2(0, -9.8f);
             signal.transform.rotation = Quaternion.Euler(0, 0, 180);
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            if(GetComponent<Rigidbody2D>().velocity == Vector2.zero){
+                idle.SetActive(true);
+                run.SetActive(false);
+                air.SetActive(false);
+            }else{
+                idle.SetActive(false);
+                run.SetActive(true);
+                air.SetActive(false);
+            }
             onGround = true;
         }
     }
