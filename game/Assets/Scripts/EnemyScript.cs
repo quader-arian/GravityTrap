@@ -109,7 +109,7 @@ public class EnemyScript : MonoBehaviour
                 GameObject currBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 Rigidbody2D rbody = currBullet.GetComponent<Rigidbody2D>();
 
-                rbody.AddForce(firePoint.right * shootSpeed, ForceMode2D.Impulse);
+                rbody.AddForce(firePoint.up * shootSpeed, ForceMode2D.Impulse);
                 timer = shootInterval;
             }
             timer = timer - Time.deltaTime;

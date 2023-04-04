@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DrawScript : MonoBehaviour
 {
     private bool waitForLine1 = false;
@@ -27,7 +28,10 @@ public class DrawScript : MonoBehaviour
     private CameraShake shake;
 
     void Start(){
-        CreateBrush();
+        //CreateBrush();
+        waitForLine1 = true;
+        waitForLine2 = true;
+        intersect = false;
         currTol = tolerance;
         shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
     }
@@ -62,8 +66,9 @@ public class DrawScript : MonoBehaviour
             currentLineRenderer = null;
             waitForLine1 = true;
             waitForLine2 = true;
-            foreach(GameObject child in gameObject.transform){
+            foreach(Transform child in GameObject.FindWithTag("Trail").transform.GetChild(0).transform){
                 child.GetComponent<UnityEngine.Rendering.Universal.Light2D>().color = col;
+                child.GetComponent<SpriteRenderer>().color = col;
             }
             intersect = false;
             StartCoroutine(shake.Shake(.1f, .1f));
