@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b7761c5efc5bcf8479c102583d353ded
+guid: 53fbe41171c687847a05e9878c420204
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: robotrun_0
+      name: rat2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 86
-        height: 55
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff13cd513faf44645811d1f8756b102d
-      internalID: 1706205846
+      spriteID: cbcc996892ac84248847e75c1d14b4a7
+      internalID: 567990020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: robotrun_1
+      name: rat2_1
       rect:
         serializedVersion: 2
-        x: 86
+        x: 20
         y: 0
-        width: 86
-        height: 55
+        width: 20
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,134 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30318a6d41f180445b88ce33dc052d0d
-      internalID: -1824738953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robotrun_2
-      rect:
-        serializedVersion: 2
-        x: 172
-        y: 0
-        width: 86
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff323ff14f51719489015523b0fc850a
-      internalID: 1115469164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robotrun_3
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 0
-        width: 86
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48a062649e3f4864cb2b6aa557474a19
-      internalID: -633087692
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robotrun_4
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 0
-        width: 86
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc410732a4796344697c7fba180c2f49
-      internalID: 1845318761
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robotrun_5
-      rect:
-        serializedVersion: 2
-        x: 430
-        y: 0
-        width: 86
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef21aa0f1d0c022459cbebf5fbcea29b
-      internalID: -726563591
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robotrun_6
-      rect:
-        serializedVersion: 2
-        x: 516
-        y: 0
-        width: 86
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b10f222d2571ab428fd6d6f7af3dd71
-      internalID: -402525947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: robotrun_7
-      rect:
-        serializedVersion: 2
-        x: 602
-        y: 0
-        width: 86
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4136c2f1f3836b4f9769c1d8c9811d9
-      internalID: -910454605
+      spriteID: 280ff07352694414aae9e375e11aafec
+      internalID: -79192229
       vertices: []
       indices: 
       edges: []
@@ -283,14 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      robotrun_2: 1115469164
-      robotrun_7: -910454605
-      robotrun_5: -726563591
-      robotrun_0: 1706205846
-      robotrun_4: 1845318761
-      robotrun_3: -633087692
-      robotrun_6: -402525947
-      robotrun_1: -1824738953
+      rat2_0: 567990020
+      rat2_1: -79192229
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
