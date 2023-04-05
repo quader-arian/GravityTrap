@@ -502,8 +502,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
-  col: {r: 1, g: 0, b: 0, a: 0}
-  light: {fileID: 0}
+  col: {r: 1, g: 0, b: 0, a: 1}
   tolerance: 6
 --- !u!1001 &7432440750687469403
 PrefabInstance:

@@ -4,31 +4,15 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private GameObject player;
-    public float offset;
-    private Vector3 playerPosition;
+    private Transform target; 
+    public float smoothSpeed = 0.125f; 
+    public Vector3 offset; 
 
-    // Start is called before the first frame update
-    void Start()
+    void FixedUpdate()
     {
-        player = GameObject.FindWithTag("Player");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector2 g = Physics2D.gravity;
-
-        if(g.Equals(new Vector2(9.8f, 0f))){
-            playerPosition = new Vector3(player.transform.position.x - offset , player.transform.position.y, transform.position.z);
-        }else if(g.Equals(new Vector2(-9.8f, 0f))){
-            playerPosition = new Vector3(player.transform.position.x + offset, player.transform.position.y, transform.position.z);
-        }else if(g.Equals(new Vector2(0f, 9.8f))){
-            playerPosition = new Vector3(player.transform.position.x, player.transform.position.y + offset, transform.position.z);
-        }else if(g.Equals(new Vector2(0f, -9.8f))){
-            playerPosition = new Vector3(player.transform.position.x, player.transform.position.y - offset, transform.position.z);
-        }
-
-        transform.position = playerPosition;
+        target = GameObject.FindWithTag("Player").transform;
+        Vector3 desiredPosition = target.position + offset;
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 }

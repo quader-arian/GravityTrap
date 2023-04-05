@@ -481,7 +481,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.513918
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1198,6 +1198,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 84488705}
     m_Modifications:
     - target: {fileID: 1748171860979078497, guid: b3b0d65093cd9cd40ac9d5640e48a518, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1748171860979078497, guid: b3b0d65093cd9cd40ac9d5640e48a518, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1545,6 +1549,10 @@ PrefabInstance:
       value: SquareLeft
       objectReference: {fileID: 0}
     - target: {fileID: 3404541315074619363, guid: 9ea8ccf77fcc04043a7621e0449213aa, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3404541315074619363, guid: 9ea8ccf77fcc04043a7621e0449213aa, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1606,6 +1614,10 @@ PrefabInstance:
       value: SquareDown
       objectReference: {fileID: 0}
     - target: {fileID: 3627529649000577623, guid: fcf17e4ea675fef41a8122852040e41e, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3627529649000577623, guid: fcf17e4ea675fef41a8122852040e41e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -1665,6 +1677,10 @@ PrefabInstance:
     - target: {fileID: 8245449395526609450, guid: 8c5063310eb1ba04195ac04aa710289d, type: 3}
       propertyPath: m_Name
       value: SquareUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8245449395526609455, guid: 8c5063310eb1ba04195ac04aa710289d, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 8245449395526609455, guid: 8c5063310eb1ba04195ac04aa710289d, type: 3}
       propertyPath: m_Materials.Array.data[0]

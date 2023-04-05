@@ -51,7 +51,7 @@ public class EnemyScript : MonoBehaviour
                 Destroy(gameObject, 0.5f);
             }
             if(onAreaContactExplode){
-                Instantiate(redFX, transform.position, Quaternion.identity);
+                Instantiate(greenFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
