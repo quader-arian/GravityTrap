@@ -7,6 +7,9 @@ public class LaunchScript : MonoBehaviour
     private Rigidbody2D body;
     private Camera cam;
     private Vector2 mousePos;
+    private AudioSource source;
+
+    public AudioClip [] sounds;
 
     public float force = 20f;
 
@@ -15,6 +18,8 @@ public class LaunchScript : MonoBehaviour
     {
         cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         body = GetComponent<Rigidbody2D>();
+        source = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -22,6 +27,9 @@ public class LaunchScript : MonoBehaviour
     {
        if(Input.GetButtonDown("Fire1")){
             Lauch();
+            int num = Random.Range(0, sounds.Length);
+            source.clip = sounds[num];
+            source.Play();
        }
     }
 

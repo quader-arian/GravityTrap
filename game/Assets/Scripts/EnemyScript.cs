@@ -54,6 +54,13 @@ public class EnemyScript : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+        if (col.gameObject.tag == "Bullet"){
+            if(!onAreaContactExplode){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.05f);
+                cameraController.StartShake(0.1f, 0.1f);
+            }
+        }
     }
     void OnTriggerStay2D(Collider2D col)
     {
@@ -78,6 +85,13 @@ public class EnemyScript : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+        if (col.gameObject.tag == "Bullet"){
+            if(!onAreaContactExplode){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.05f);
+                cameraController.StartShake(0.1f, 0.1f);
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -92,6 +106,12 @@ public class EnemyScript : MonoBehaviour
                 Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
+        }if (col.gameObject.tag == "Bullet"){
+            if(!onAreaContactExplode){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.05f);
+                cameraController.StartShake(0.1f, 0.1f);
+            }
         }
     }
     void OnCollisionStay2D(Collision2D col)
@@ -105,6 +125,12 @@ public class EnemyScript : MonoBehaviour
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }if (col.gameObject.tag == "Bullet"){
+            if(!onAreaContactExplode){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.05f);
+                cameraController.StartShake(0.1f, 0.1f);
             }
         }
     }
@@ -133,7 +159,7 @@ public class EnemyScript : MonoBehaviour
                     currentMovePoint = 0;
                 }
             }
-            float step = moveSpeed * Time.deltaTime;
+            float step = 0.1f * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, stayPoints[currentMovePoint], step);
         }
 

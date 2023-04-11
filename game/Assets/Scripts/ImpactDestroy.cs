@@ -13,6 +13,9 @@ public class ImpactDestroy : MonoBehaviour
         if (col.gameObject.tag == "Player"){
             Instantiate(redFX, transform.position, Quaternion.identity);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }else if(col.gameObject.tag == "EnemyComplete"){
+            Instantiate(redFX, transform.position, Quaternion.identity);
+            Destroy(col);
         }
         Instantiate(redFX, transform.position, Quaternion.identity);
         cameraController.StartShake(0.05f, 0.05f);
