@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class WasdScript : MonoBehaviour
 {
-    //reference to Current Direction game object
-    public GameObject direction;
-
     //character movement speed
     public float speed = 5.0f;
 

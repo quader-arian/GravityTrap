@@ -7,14 +7,15 @@ public class CameraController : MonoBehaviour
     private Transform target;
     public bool isFollowing = false;
     public float smoothSpeed = 0.15f;
-    public Vector3 offset;
+    public float offsetNum = 2f;
+    private Vector3 offset = new Vector3();
     public int shakeSamples = 10;
     private bool isShaking = false;
     private List<Vector2> precomputedShakeSamples;
 
     private void Start()
     {
-        offset = new Vector3(offset.x, offset.y, -10f); // Set the z offset to -10
+        //offset = new Vector3(offset.x, offset.y, -10f); // Set the z offset to -10
         precomputedShakeSamples = PrecomputeShakeSamples(shakeSamples);
     }
 
@@ -23,6 +24,17 @@ public class CameraController : MonoBehaviour
         if (isFollowing && !isShaking)
         {
             target = GameObject.FindWithTag("Player").transform;
+            if(Physics2D.gravity == new Vector2(0, 9.8f) && GameObject.FindWithTag("Player").GetComponent<GravityScript>().onGround){
+                offset = new Vector3(0, -offsetNum, -10);
+            }else if(Physics2D.gravity == new Vector2(0, -9.8f) && GameObject.FindWithTag("Player").GetComponent<GravityScript>().onGround){
+                offset = new Vector3(0, offsetNum, -10);
+            }else if(Physics2D.gravity == new Vector2(9.8f, 0) && GameObject.FindWithTag("Player").GetComponent<GravityScript>().onGround){
+                offset = new Vector3(-offsetNum, 0, -10);
+            }else if(Physics2D.gravity == new Vector2(-9.8f, 0) && GameObject.FindWithTag("Player").GetComponent<GravityScript>().onGround){
+                offset = new Vector3(offsetNum, 0, -10);
+            }else{
+                offset = new Vector3(0, 0, -10);
+            }
             Vector3 desiredPosition = target.position + offset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
             transform.position = smoothedPosition;

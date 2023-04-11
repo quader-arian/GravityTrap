@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d582833fe72975044850df824e75e2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueFX: {fileID: 8114572080856966004, guid: a1f45f88fb4721249b5655515fd7bacb, type: 3}
+  blueFX: {fileID: 8114572080856966004, guid: 0e53317944b8eb7488aa99b819f0a399, type: 3}
   greenFX: {fileID: 8114572080856966004, guid: 0e53317944b8eb7488aa99b819f0a399, type: 3}
-  redFX: {fileID: 8114572080856966004, guid: a73ea26a59415b541b282dce3bb7f183, type: 3}
+  redFX: {fileID: 8114572080856966004, guid: 0e53317944b8eb7488aa99b819f0a399, type: 3}
   moveSpeed: 0
   movePoints: []
   currentMovePoint: 0
@@ -247,6 +247,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2210650620667107082, guid: 565c41b0ece2fdd4ea2beec40ce5edc9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2210650620667107082, guid: 565c41b0ece2fdd4ea2beec40ce5edc9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
@@ -264,6 +268,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8239803911533021533}
     m_Modifications:
+    - target: {fileID: 7517309179816042844, guid: fc5df58a61835a44191681ae56170858, type: 3}
+      propertyPath: m_SortingOrder
+      value: 31
+      objectReference: {fileID: 0}
     - target: {fileID: 7517309179816042844, guid: fc5df58a61835a44191681ae56170858, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -377,6 +385,10 @@ PrefabInstance:
     - target: {fileID: 374129194450510196, guid: 5dc6f17dc8aac1c4abac6a0ca2af7796, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 374129194450510198, guid: 5dc6f17dc8aac1c4abac6a0ca2af7796, type: 3}
+      propertyPath: m_SortingOrder
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 374129194450510198, guid: 5dc6f17dc8aac1c4abac6a0ca2af7796, type: 3}
       propertyPath: m_Materials.Array.data[0]

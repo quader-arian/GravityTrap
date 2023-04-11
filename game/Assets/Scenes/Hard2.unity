@@ -483,8 +483,8 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -500,18 +500,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d405ad494b94bba4a9c276d5181cc85f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -603,6 +591,22 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &519420034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5ddac08a3bfebe4bbc9c49230453ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFollowing: 0
+  smoothSpeed: 0.15
+  offsetNum: 2
+  shakeSamples: 10
 --- !u!1 &527695941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1578,7 @@ PrefabInstance:
     - target: {fileID: 982367534111915973, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
       propertyPath: shake
       value: 
-      objectReference: {fileID: 519420030}
+      objectReference: {fileID: 0}
     - target: {fileID: 982367534111915973, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
       propertyPath: allLines
       value: 
@@ -1710,7 +1714,7 @@ PrefabInstance:
     - target: {fileID: 2907545312225244613, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
       propertyPath: shake
       value: 
-      objectReference: {fileID: 519420030}
+      objectReference: {fileID: 0}
     - target: {fileID: 2907545312225244613, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
       propertyPath: signal
       value: 

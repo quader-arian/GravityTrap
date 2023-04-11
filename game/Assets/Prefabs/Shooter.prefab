@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 2a879ff7e997ab149927723ce4c126ca, type: 3}
   m_Color: {r: 0.9716981, g: 0, b: 0.44280738, a: 1}
   m_FlipX: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d582833fe72975044850df824e75e2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueFX: {fileID: 8114572080856966004, guid: a1f45f88fb4721249b5655515fd7bacb, type: 3}
+  blueFX: {fileID: 8114572080856966004, guid: 0d6b5d1f4a58c5243940158427bf5286, type: 3}
   greenFX: {fileID: 8114572080856966004, guid: 0e53317944b8eb7488aa99b819f0a399, type: 3}
   redFX: {fileID: 8114572080856966004, guid: a73ea26a59415b541b282dce3bb7f183, type: 3}
   moveSpeed: 0
@@ -429,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1103049991638797471, guid: 237d87cf89e52f94ebbf029ca37122f7, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 237d87cf89e52f94ebbf029ca37122f7, type: 3}

@@ -7,31 +7,35 @@ public class SceneManagerScript : MonoBehaviour
 {
     public string sceneName;
     public string defaultGravity = "Up";
-    public GameObject signal;
+    public float timer = 2f;
+    public GameObject scared;
+    public GameObject happy;
 
     void Start(){
         if (defaultGravity == "Up"){
             Physics2D.gravity = new Vector2(0, 9.8f);
-            signal.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         if(defaultGravity == "Left"){
             Physics2D.gravity = new Vector2(-9.8f, 0);
-            signal.transform.rotation = Quaternion.Euler(0, 0, 90);
         }
         if(defaultGravity == "Right"){
             Physics2D.gravity = new Vector2(9.8f, 0);
-            signal.transform.rotation = Quaternion.Euler(0, 0, 270);
         }
         if(defaultGravity == "Down"){
             Physics2D.gravity = new Vector2(0, -9.8f);
-            signal.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
     }
 
     void Update(){
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyComplete");
         if(enemies.Length <= 0){
-            SceneManager.LoadScene(sceneName);
+            timer -= Time.deltaTime;
+            GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().isKinematic = false;
+            happy.SetActive(true);
+            scared.SetActive(false);
+            if(timer < 0){
+                SceneManager.LoadScene(sceneName);
+            }
         }
     }
 }

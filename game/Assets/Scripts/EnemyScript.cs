@@ -15,6 +15,7 @@ public class EnemyScript : MonoBehaviour
     public float moveSpeed;
     public Transform[] movePoints;
     public int currentMovePoint = 0;
+    private Vector3[] stayPoints = new Vector3[2];
 
     [Header("Shoot Settings")]
     public bool shoot;
@@ -42,6 +43,17 @@ public class EnemyScript : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
+        if (col.gameObject.tag == "Player"){
+            if(onContactKill){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.05f);
+                cameraController.StartShake(0.1f, 0.1f);
+            }
+            if(onContactExplode){
+                Instantiate(redFX, transform.position, Quaternion.identity);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
     }
     void OnTriggerStay2D(Collider2D col)
     {
@@ -52,6 +64,17 @@ public class EnemyScript : MonoBehaviour
             }
             if(onAreaContactExplode){
                 Instantiate(greenFX, transform.position, Quaternion.identity);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
+        if (col.gameObject.tag == "Player"){
+            if(onContactKill){
+                Instantiate(blueFX, transform.position, Quaternion.identity);
+                Destroy(gameObject, 0.05f);
+                cameraController.StartShake(0.1f, 0.1f);
+            }
+            if(onContactExplode){
+                Instantiate(redFX, transform.position, Quaternion.identity);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
@@ -89,6 +112,8 @@ public class EnemyScript : MonoBehaviour
     void Start(){
         timer = shootInterval;
         cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+        stayPoints[0] = new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z);
+        stayPoints[1] = new Vector3(transform.position.x, transform.position.y - 0.1f, transform.position.z);
     }
 
     void Update(){
@@ -101,6 +126,15 @@ public class EnemyScript : MonoBehaviour
             }
             float step = moveSpeed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, movePoints[currentMovePoint].position, step);
+        }else{
+            if(transform.position == stayPoints[currentMovePoint]){
+                currentMovePoint++;
+                if(currentMovePoint >= stayPoints.Length){
+                    currentMovePoint = 0;
+                }
+            }
+            float step = moveSpeed * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, stayPoints[currentMovePoint], step);
         }
 
         if(shoot){
