@@ -27,7 +27,7 @@ public class GravityScript : MonoBehaviour
     void OnCollisionStay2D(Collision2D col)
     {
         GravityChange(col);
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)){
+        if((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) && !run.activeSelf){
             idle.SetActive(false);
             run.SetActive(true);
             air.SetActive(false);

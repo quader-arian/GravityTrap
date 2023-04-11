@@ -26,38 +26,45 @@ public class EnemyScript : MonoBehaviour
     public Transform firePoint;
 
     [Header("Kill and Death Settings")]
+    public bool dying = false;
+    public bool restarting = false;
+    public float doneTimer = 1f;
     public bool onContactKill;
     public bool onContactExplode;
     public bool onAreaContactKill;
     public bool onAreaContactExplode;
 
+    [Header("Animations")]
+    public GameObject [] animationOff;
+    public GameObject animationOn;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
-                Destroy(gameObject, 0.5f);
                 Instantiate(redFX, transform.position, Quaternion.identity);
+                dying = true;
             }
             if(onAreaContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                restarting = true;
             }
         }
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                restarting = true;
             }
         }
         if (col.gameObject.tag == "Bullet"){
             if(!onAreaContactExplode){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
         }
@@ -67,28 +74,28 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "AttackArea"){
             if(onAreaContactKill){
                 Instantiate(redFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.5f);
+                dying = true;
             }
             if(onAreaContactExplode){
                 Instantiate(greenFX, transform.position, Quaternion.identity);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                restarting = true;
             }
         }
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                restarting = true;
             }
         }
         if (col.gameObject.tag == "Bullet"){
             if(!onAreaContactExplode){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
         }
@@ -99,18 +106,18 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                restarting = true;
             }
         }if (col.gameObject.tag == "Bullet"){
             if(!onAreaContactExplode){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
-                cameraController.StartShake(0.1f, 0.1f);
+                dying = true;
+                restarting = true;
             }
         }
     }
@@ -119,17 +126,17 @@ public class EnemyScript : MonoBehaviour
         if (col.gameObject.tag == "Player"){
             if(onContactKill){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                restarting = true;
             }
         }if (col.gameObject.tag == "Bullet"){
             if(!onAreaContactExplode){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
-                Destroy(gameObject, 0.05f);
+                dying = true;
                 cameraController.StartShake(0.1f, 0.1f);
             }
         }
@@ -143,7 +150,33 @@ public class EnemyScript : MonoBehaviour
     }
 
     void Update(){
-        if(moveSpeed>0){
+        if(dying || restarting){
+            if(animationOn != null){
+                foreach(GameObject o in animationOff){
+                    o.SetActive(false);
+                }
+                animationOn.SetActive(true);
+            }
+            
+            if(GetComponent<Rigidbody2D>() != null){
+                Destroy(GetComponent<Rigidbody2D>());
+                //Destroy(GetComponent<BoxCollider2D>());
+            }
+
+            doneTimer -= Time.deltaTime;
+            if(doneTimer < 0){
+                if(dying && onContactKill){
+                    Destroy(gameObject);
+                }else if(dying){
+                    Destroy(gameObject);
+                }
+                
+                if(restarting){
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                }
+            }
+
+        }else if(moveSpeed>0){
             if(transform.position == movePoints[currentMovePoint].position){
                 currentMovePoint++;
                 if(currentMovePoint >= movePoints.Length){
