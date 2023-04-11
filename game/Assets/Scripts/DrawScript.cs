@@ -25,7 +25,7 @@ public class DrawScript : MonoBehaviour
     private MeshFilter collideVisual;
     private bool foundFirst;
 
-    private CameraShake shake;
+    private CameraController cameraController;
 
     void Start(){
         //CreateBrush();
@@ -33,7 +33,7 @@ public class DrawScript : MonoBehaviour
         waitForLine2 = true;
         intersect = false;
         currTol = tolerance;
-        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     void Update(){
@@ -71,7 +71,7 @@ public class DrawScript : MonoBehaviour
                 child.GetComponent<SpriteRenderer>().color = col;
             }
             intersect = false;
-            StartCoroutine(shake.Shake(.1f, .1f));
+            cameraController.StartShake(0.1f, 0.1f);
         }
     }
 

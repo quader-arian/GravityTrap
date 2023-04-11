@@ -7,7 +7,7 @@ public class ImpactDestroy : MonoBehaviour
 {
     public float timer;
     public GameObject redFX;
-    private CameraShake shake;
+    private CameraController cameraController;
 
     void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Player"){
@@ -15,12 +15,12 @@ public class ImpactDestroy : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         Instantiate(redFX, transform.position, Quaternion.identity);
-        StartCoroutine(shake.Shake(.05f, .05f));
+        cameraController.StartShake(0.05f, 0.05f);
         Destroy(gameObject);
     }
 
     void Start(){
         Destroy(gameObject, timer);
-        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 }

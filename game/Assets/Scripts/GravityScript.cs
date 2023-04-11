@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GravityScript : MonoBehaviour
 {
-    private CameraShake shake;
+    private CameraController cameraController;
     public GameObject signal;
     public bool onGround = false;
     public bool onGroundExit = false;
@@ -13,14 +13,15 @@ public class GravityScript : MonoBehaviour
     public GameObject run;
     public GameObject air;
 
-    void Start(){
-        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+    void Start()
+    {
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         GravityChange(col);
-        StartCoroutine(shake.Shake(.04f, .04f));
+        cameraController.StartShake(0.1f, 0.1f);
         onGroundExit = false;
     }
     void OnCollisionStay2D(Collision2D col)
@@ -30,14 +31,15 @@ public class GravityScript : MonoBehaviour
     }
     void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.tag == "Up" || col.gameObject.tag == "Left" || col.gameObject.tag == "Right" || col.gameObject.tag == "Down"){
+        if (col.gameObject.tag == "Up" || col.gameObject.tag == "Left" || col.gameObject.tag == "Right" || col.gameObject.tag == "Down")
+        {
             onGround = false;
             onGroundExit = true;
             idle.SetActive(false);
             run.SetActive(false);
             air.SetActive(true);
         }
-        StartCoroutine(shake.Shake(.04f, .04f));
+        cameraController.StartShake(0.1f, 0.1f);
     }
 
     void GravityChange(Collision2D col){

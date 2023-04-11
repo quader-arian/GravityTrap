@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemyScript : MonoBehaviour
 {
-    private CameraShake shake;
+    private CameraController cameraController;
     [Header("FX")]
     public GameObject blueFX;
     public GameObject greenFX;
@@ -63,7 +63,7 @@ public class EnemyScript : MonoBehaviour
             if(onContactKill){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
                 Destroy(gameObject, 0.05f);
-                StartCoroutine(shake.Shake(.1f, .1f));
+                cameraController.StartShake(0.1f, 0.1f);
             }
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
@@ -77,7 +77,7 @@ public class EnemyScript : MonoBehaviour
             if(onContactKill){
                 Instantiate(blueFX, transform.position, Quaternion.identity);
                 Destroy(gameObject, 0.05f);
-                StartCoroutine(shake.Shake(.1f, .1f));
+                cameraController.StartShake(0.1f, 0.1f);
             }
             if(onContactExplode){
                 Instantiate(redFX, transform.position, Quaternion.identity);
@@ -88,7 +88,7 @@ public class EnemyScript : MonoBehaviour
 
     void Start(){
         timer = shootInterval;
-        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();
+        cameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
     }
 
     void Update(){
