@@ -15,11 +15,12 @@ public class ImpactDestroy : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }else if(col.gameObject.tag == "EnemyComplete"){
             Instantiate(redFX, transform.position, Quaternion.identity);
-            Destroy(col);
+            Destroy(gameObject);
+        }else if(col.gameObject.tag == "Up" || col.gameObject.tag == "Right" || col.gameObject.tag == "Left" || col.gameObject.tag == "Down"){
+            Instantiate(redFX, transform.position, Quaternion.identity);
+            cameraController.StartShake(0.05f, 0.05f);
+            Destroy(gameObject);
         }
-        Instantiate(redFX, transform.position, Quaternion.identity);
-        cameraController.StartShake(0.05f, 0.05f);
-        Destroy(gameObject);
     }
 
     void Start(){

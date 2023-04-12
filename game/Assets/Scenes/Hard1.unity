@@ -877,7 +877,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.12941177, g: 0.14117648, b: 0.18823531, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ddac08a3bfebe4bbc9c49230453ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFollowing: 0
+  isFollowing: 1
   smoothSpeed: 0.15
   offsetNum: 2
   shakeSamples: 10
@@ -1729,7 +1729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5639220211356564219, guid: c992716dfcab3e94c98003c9be35b4d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.8073683
+      value: 13.24
       objectReference: {fileID: 0}
     - target: {fileID: 5639220211356564219, guid: c992716dfcab3e94c98003c9be35b4d7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3107,11 +3107,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4891396345150254917, guid: d34d240bcc94d9f429683526690f0947, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.15
+      value: 10.58
       objectReference: {fileID: 0}
     - target: {fileID: 4891396345150254917, guid: d34d240bcc94d9f429683526690f0947, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.02
+      value: -3.23
       objectReference: {fileID: 0}
     - target: {fileID: 4891396345150254917, guid: d34d240bcc94d9f429683526690f0947, type: 3}
       propertyPath: m_LocalPosition.z
