@@ -398,7 +398,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLASE SAVE ME!
+  m_text: PLEASE SAVE ME!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0f0bf9911c9b364fb9f019e2ea65e1b, type: 2}
   m_sharedMaterial: {fileID: -3546060046602216896, guid: e0f0bf9911c9b364fb9f019e2ea65e1b, type: 2}
@@ -747,7 +747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4441040866530843601, guid: 34258d1f8489c0845b208c2bd0f17d91, type: 3}
       propertyPath: m_SortingOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 6804491595003479515, guid: 34258d1f8489c0845b208c2bd0f17d91, type: 3}
       propertyPath: m_RootOrder
@@ -821,7 +821,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4180130336700881103, guid: 41cefc77dd6a0204fa54cab129bd9dac, type: 3}
       propertyPath: m_SortingOrder
-      value: 32
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 7287680300260119544, guid: 41cefc77dd6a0204fa54cab129bd9dac, type: 3}
       propertyPath: m_RootOrder

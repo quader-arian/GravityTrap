@@ -13,6 +13,7 @@ public class LaunchScript : MonoBehaviour
     public GameObject dialogueBox;
     public int dialogueCount;
     public TMP_Text t;
+    private GameObject destroyTrigger;
 
     public AudioClip [] sounds;
 
@@ -46,6 +47,7 @@ public class LaunchScript : MonoBehaviour
                     t.text = "TO TAKE EM OUT, MOVE AROUND AND CLOSE YOUR TRACE BY TOUCHING THE LIGHTNING FLUX POINTS ON YOUR TRAIL";
                 }else{
                     t.text = "TRAPPING THEM WITHIN YOUR GRAVITY AURA SHOULD DO THE TRICK";
+                    Destroy(destroyTrigger);
                     canLaunch = true;
                 }
                 dialogueCount++;
@@ -66,10 +68,11 @@ public class LaunchScript : MonoBehaviour
         body.AddForce(lookDir.normalized * force, ForceMode2D.Impulse);
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    void OnCollisionEnter2D(Collision2D col)
     {
         if(col.gameObject.tag == "Dialogue" && dialogueCount <= 0){
             canLaunch = false;
+            destroyTrigger = col.gameObject;
             dialogueBox.SetActive(true);
         }
     }
