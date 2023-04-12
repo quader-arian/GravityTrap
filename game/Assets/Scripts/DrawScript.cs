@@ -70,6 +70,7 @@ public class DrawScript : MonoBehaviour
                 child.GetComponent<UnityEngine.Rendering.Universal.Light2D>().color = col;
                 child.GetComponent<SpriteRenderer>().color = col;
             }
+            GetComponent<AudioSource>().Play();
             intersect = false;
             cameraController.StartShake(0.1f, 0.1f);
         }

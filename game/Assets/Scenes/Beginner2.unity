@@ -2684,10 +2684,6 @@ PrefabInstance:
       propertyPath: shake
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 2907545312225244613, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
-      propertyPath: signal
-      value: 
-      objectReference: {fileID: 100252794}
     - target: {fileID: 2907545312225244668, guid: 4fb958f7ea9f5be408a6c7169d9cff22, type: 3}
       propertyPath: m_Name
       value: Player

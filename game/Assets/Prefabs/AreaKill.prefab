@@ -379,6 +379,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spinnerdeath
       objectReference: {fileID: 0}
+    - target: {fileID: 8926854702815180017, guid: a804362b675ef624eaaa45f0b4fa5ff7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a804362b675ef624eaaa45f0b4fa5ff7, type: 3}
 --- !u!1 &3309514094886825804 stripped
