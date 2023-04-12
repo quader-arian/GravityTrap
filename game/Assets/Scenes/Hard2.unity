@@ -636,9 +636,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 715624a5b93f3f8409e4a723e0638e11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Beginner1
+  sceneName: LearnTravel
   defaultGravity: Down
-  signal: {fileID: 100252794}
+  timer: 2
+  scared: {fileID: 0}
+  happy: {fileID: 0}
 --- !u!4 &527695943
 Transform:
   m_ObjectHideFlags: 0

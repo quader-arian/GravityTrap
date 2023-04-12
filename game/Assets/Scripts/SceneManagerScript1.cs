@@ -33,7 +33,7 @@ public class SceneManagerScript1 : MonoBehaviour
             t1.SetActive(false);
             t2.SetActive(true);
             GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().isKinematic = false;
-            if(timer < 0){
+            if(timer < 0 && Input.GetButtonDown("Fire1")){
                 SceneManager.LoadScene(sceneName);
             }
         }

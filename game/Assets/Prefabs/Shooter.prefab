@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 4661942163167558047}
   m_Layer: 0
   m_Name: Shooter
-  m_TagString: EnemyComplete
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,10 +289,15 @@ MonoBehaviour:
   shootSpeed: 10
   bullet: {fileID: 6571371629757886144, guid: d04662ff886838843b9a77d04a60eaa6, type: 3}
   firePoint: {fileID: 6541157881081396260}
+  dying: 0
+  restarting: 0
+  doneTimer: 1
   onContactKill: 0
   onContactExplode: 1
   onAreaContactKill: 1
   onAreaContactExplode: 0
+  animationOff: []
+  animationOn: {fileID: 0}
 --- !u!114 &4661942163167558047
 MonoBehaviour:
   m_ObjectHideFlags: 0
