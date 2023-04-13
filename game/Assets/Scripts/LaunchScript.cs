@@ -31,7 +31,8 @@ public class LaunchScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(Input.GetButtonDown("Fire1")){
+        if(!PauseScript.gameIsPaused){
+            if(Input.GetButtonDown("Fire1")){
             if(canLaunch){
                 Lauch();
             }else{
@@ -56,6 +57,7 @@ public class LaunchScript : MonoBehaviour
             source.clip = sounds[num];
             source.Play();
        }
+        }
     }
 
     void Lauch(){

@@ -7,10 +7,14 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
+        Time.timeScale = 1;
+        PauseScript.gameIsPaused = false;
         SceneManager.LoadScene("Level1");
     }
     public void ReturnMain()
     {
+        Time.timeScale = 1;
+        PauseScript.gameIsPaused = false;
         SceneManager.LoadScene("Menu");
     }
 

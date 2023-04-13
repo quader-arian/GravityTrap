@@ -196,7 +196,7 @@ public class EnemyScript : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, stayPoints[currentMovePoint], step);
         }
 
-        if(shoot){
+        if(shoot && !PauseScript.gameIsPaused){
             if(timer < 0){
                 Instantiate(greenFX, transform.position, Quaternion.identity);
                 GameObject currBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
