@@ -7,23 +7,15 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("LearnTravel");
+        SceneManager.LoadScene("Level1");
     }
-    public void producers()
+    public void ReturnMain()
     {
-        SceneManager.LoadScene("producers");
+        SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame()
     {
         Application.Quit();
-    }
-
-
-
-
-    public void mainMenu()
-    {
-        SceneManager.LoadScene("mainMenu");
     }
 }
